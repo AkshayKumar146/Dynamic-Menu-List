@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div id="mainDiv" class="col-md-12">
+
+
+            </div>
+            <!-- Data is going to load here  -->
+        </div>
+    </div>
+    <div id="secondDiv" class="container row" style="display: none; ">
+        <div class="col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-heading"> Item Name </div>
+                <div class="panel-body">
+                    <img style="width:250px;height: 200px;" src="IMG_9443.JPG" class="img-responsive img-rounded" />
+                    <div style="margin-top: 20px;" class="panel-footer">
+                        <h4>Rs:
+                            <strong class="Price"> 250</strong></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            var Item = [{
+                "Menu": "Biyani",
+                "pic": "biryani.jpg",
+                "Price": 250
+            }, {
+                "Menu": "Qorma",
+                "pic": "mutton.jpg",
+                "Price": 300
+            }, {
+                "Menu": "Handi",
+                "pic": "handi.jpeg",
+                "Price": 250
+            }]
+            var main = $('#mainDiv');
+            var second = $('#secondDiv');
+            for (i = 0; i <= Item.length - 1; i++) {
+                second.find(".Price").text(Item[i].Price)
+                second.find(".panel-heading").text(Item[i].Menu)
+                second.find("img").attr('src', Item[i].pic)
+                main.append(second.html());
+            }
+        })
+    </script>
+</body>
+
+</html>
